@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <locale.h>
+#include <iostream>
+#include <Windows.h>
+
+int main(void)
+{
+	setlocale(LC_ALL, "Rus");
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	char type1[4], type2[4], type3[4];
+	char num1[4], num2[4], num3[4];
+	float length1, length2, length3;
+	int time1, time2, time3;
+
+	printf("1. Введите вид транспорта, номер маршрута, протяженность маршрута (км) и время в дороге (мин) > ");
+	scanf_s("%s %s %f %d", &type1, 4, &num1, 3, &length1, &time1);
+
+	printf("2. Введите вид транспорта, номер маршрута, протяженность маршрута (км) и время в дороге (мин) > ");
+	scanf_s("%s %s %f %d", &type2, 4, &num2, 3, &length2, &time2);
+
+	printf("3. Введите вид транспорта, номер маршрута, протяженность маршрута (км) и время в дороге (мин) > ");
+	scanf_s("%s %s %f %d", &type3, 4, &num3, 4, &length3, &time3);
+
+	printf("\n");
+
+	printf("-----------------------------------------------\n");
+	printf("|      Ведомость общественного транспорта     |\n");
+	printf("|---------------------------------------------|\n");
+	printf("|  Вид   |    №   | Протяженность |   Время   |\n");
+	printf("| транс- |  марш- |   маршрута    | в дороге  |\n");
+	printf("| порта  |  рута  |     (км)      |   (мин)   |\n");
+	printf("|---------------------------------------------|\n");
+	printf("|   %s   |   %s   |     %.2f     |    %d     |\n", type1, num1, length1, time1);
+	printf("|   %s   |   %s   |     %.1f      |    %d     |\n", type2, num2, length2, time2);
+	printf("|   %s    |   %s  |     %.1f      |    %d    |\n", type3, num3, length3, time3);
+	printf("|---------------------------------------------|\n");
+	printf("| Примечание: Тр - трамвай, Тс - троллейбус,  |\n");
+	printf("|             А - автобус                     |\n");
+	printf("-----------------------------------------------\n");
+
+	return 0;
+}
